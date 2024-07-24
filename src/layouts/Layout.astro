@@ -1,4 +1,7 @@
 ---
+import Footer from '../components/Footer.astro';
+
+
 interface Props {
 	title: string;
 }
@@ -17,16 +20,14 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
-		<div class="h-32">
-
-		</div>
+		<Footer />
 	</body>
 </html>
 <style is:global>
 	
 	html {
 		font-family: system-ui, sans-serif;
-		background: #fff;
+		background: #eee;
 	}
 	
 </style>

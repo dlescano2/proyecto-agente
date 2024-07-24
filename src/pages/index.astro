@@ -1,9 +1,162 @@
 ---
-import Header from '../components/Header.astro';
-import Layout from '../layouts/Layout.astro';
+import HeaderHome from "../components/HeaderHome.astro";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
 
+const events = [
+  {
+    title: "Limpieza de Playas y Conservación de Ecosistemas Costeros",
+    date: "10 de Setiembre de 2024",
+    location: "Montevideo",
+    tags: ["Ecosistema Costero"],
+    image: "/img/actividades/limpieza-playas.png",
+    category: "Campañas de concientización",
+    organizer: "Playas Limpias"
+  },
+  {
+    title: "Plantación de Árboles para la Conservación de Bosques",
+    date: "12 de Setiembre de 2024",
+    location: "Artigas",
+    tags: ["Bosques"],
+    image: "/img/actividades/plantacion-arboles.png",
+    category: "Restauración ambiental",
+    organizer: "Nativa"
+  },
+  {
+    title: "Taller Consumo Sostenible y Energía Renovable",
+    date: "14 de Setiembre de 2024",
+    location: "Montevideo",
+    tags: ["Residuos", "Energía"],
+    image: "/img/actividades/taller-consumo-sostenible.png",
+    category: "Talleres",
+    organizer: "EcoCasas"
+  },
+  {
+    title: "Taller Conservación de la Biodiversidad Acuática",
+    date: "20 de Setiembre de 2024",
+    location: "Maldonado",
+    tags: ["Biodiversidad"],
+    image: "/img/actividades/taller-conservacion-bio.png",
+    category: "Eventos Educativos",
+    organizer: "Playas Limpias"
+  }
+];
 ---
 
 <Layout title="Mapa Verde">
-	<Header />
+	<HeaderHome />
+	<section>
+		<div class="max-w-4xl mx-auto py-4">
+			<img src="/img/hero-home.png" alt="Mapa del Uruguay" />
+		</div>
+	</section>
+	<section class="max-w-6xl mx-auto mb-4">
+		<div class="bg-blue-900 border rounded-3xl">
+			<div class="p-12 text-center text-white">
+				<h1 class="font-bold text-4xl mb-4">¿Qué es el Mapa Verde?</h1>
+				<p class="text-pretty">
+					Mapa Verde es una plataforma digital de información y
+					comunicación que conecta a iniciativas juveniles ambientales
+					entre ellas y con el resto de la sociedad. Permite
+					visualizar: a) las organizaciones sin fines de lucro
+					conformadas total o mayoritariamente por jóvenes que actúan
+					en respuesta a la crisis ambiental; b) los emprendimientos
+					ambientales juveniles; c) los espacios de participación o
+					voluntariado ambiental juvenil, y d) las redes ambientales
+					uruguayas integradas por jóvenes. Además, ofrece una agenda
+					actualizada de actividades y recursos disponibles para la
+					acción ambiental joven. <br /><strong
+						>¡Te damos la bienvenida!</strong
+					>
+				</p>
+			</div>
+		</div>
+	</section>
+	<section class="my-4">
+		<div class="relative bg-gray-100">
+			<img
+				src="/img/camino.png"
+				alt="Comunidad Verde"
+				class="w-full h-auto object-cover"
+			/>
+			<div class="max-w-6 mx-auto">
+				<div
+					class="absolute top-2 left-48 max-w-md p-6 bg-white rounded-lg shadow-lg"
+				>
+					<h1 class="text-3xl font-bold mb-4">Comunidad Verde</h1>
+					<p class="text-gray-700 mb-4">
+						La comunidad verde es un conjunto de personas de Uruguay
+						integrado por jóvenes de entre 13 y 29 años que están
+						interesados en la acción ambiental joven y que utilizan
+						la plataforma mapaverde.uy como medio para conectar con
+						más jóvenes, informarse sobre actividades disponibles,
+						acceder a recursos y capacitación en torno a temas de
+						ambiente y comunicación para el desarrollo.
+					</p>
+					<p class="text-gray-700 mb-4">
+						La Comunidad Verde está compuesta por las personas
+						jóvenes pertenecientes a las iniciativas del Mapa Verde.
+					</p>
+					<a href="/agente-verde"
+						class="inline-block bg-purple-700 text-white text-lg font-semibold px-6 py-2 rounded-2xl mb-4 hover:bg-purple-800 transition duration-300"
+					>
+						¡Sé un Agente Verde!
+				</a>
+					<p class="text-gray-700 mb-2">
+						Un nuevo espacio de Mapa Verde donde conectas con otros
+						jóvenes del país interesados en la acción ambiental.
+						Podrás conocer a personas que lideran iniciativas
+						ambientales, capacitarte, colaborar con tu comunidad y
+						hacer amigos.
+					</p>
+					<a
+						href="/agente-verde"
+						class="text-purple-700 font-semibold hover:underline"
+						>Ver más</a
+					>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="max-w-6xl mx-auto">
+		<h2 class="text-3xl font-bold mb-4 text-center">
+			Próximas actividades
+		</h2>
+		<div>
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+				{events.map(event => (
+				  <div class="border rounded-lg shadow-lg overflow-hidden bg-white">
+					<img src={event.image} alt={event.title} class="w-full h-48 object-cover"/>
+					<div class="p-4">
+					  <div class="mb-2">
+						<span class="bg-blue-600 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">{event.category}</span>
+					  </div>
+					  <h3 class="text-lg font-semibold">{event.title}</h3>
+					  <div class="flex items-center text-sm text-gray-500 mt-2 gap-2">
+						<img src="/img/icons/calendar.png" alt="Calendario">
+						{event.date}
+					  </div>
+					  <div class="flex items-center text-sm text-gray-500 mt-1 gap-2">
+						<img src="/img/icons/pin.png" alt="Pin">
+						{event.location}
+					  </div>
+					  <div class="flex items-center text-sm text-gray-500 mt-1">
+						
+						{event.tags.join(', ')}
+					  </div>
+					  <div class="mt-4 flex justify-between items-center">
+						<span class="text-sm text-gray-500 flex items-center gap-2">
+						  <img src="/path/to/organizer-icon.png" alt={event.organizer} class="h-5 w-5"/>
+						  {event.organizer}
+						</span>
+						<a href="/actividades/limpieza-de-playas" class="text-white hover:text-green-700 p-2 bg-green-500 rounded-full size-10 flex justify-center items-center">
+							<span class="font-semibold">&gt</span>
+						</a>
+					  </div>
+					</div>
+				  </div>
+				))}
+			</div>
+		</div>
+	</section>
 </Layout>

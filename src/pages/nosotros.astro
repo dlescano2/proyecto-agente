@@ -1,9 +1,84 @@
 ---
-import Header from '../components/Header.astro';
-import Layout from '../layouts/Layout.astro';
-
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import HeaderSection from "../sections/HeaderSection.astro";
 ---
 
 <Layout title="Mapa Verde">
 	<Header />
+	<HeaderSection
+		imgSrc="/img/portadas/nosotros.png"
+		bgColor="bg-yellow-500"
+	/>
+	<section class="max-w-6xl mx-auto">
+		<article class="bg-white p-12 rounded-3xl my-4 shadow-md">
+			<h1 class="text-2xl font-bold mb-4">¿Qué es Mapa Verde?</h1>
+			<p>
+				El proyecto Mapa Verde inaugura un espacio necesario y
+				estratégico de colaboración interinstitucional, formación y
+				participación juvenil en temas de desarrollo ambientalmente
+				sostenible en Uruguay. Es una plataforma de información y
+				comunicación, que conecta a iniciativas juveniles ambientales
+				entre ellas y con el resto de la sociedad.
+			</p>
+		</article>
+		<div class="flex flex-wrap justify-center gap-2">
+			<img class="h-24" src="/img/icons/agua.png" alt="Icono de Agua">
+			<img class="h-24" src="/img/icons/aire.png" alt="Icono de Aire">
+			<img class="h-24" src="/img/icons/biodiversidad.png" alt="Icono de Biodiversidad">
+			<img class="h-24" src="/img/icons/bosques.png" alt="Icono de Bosques">
+			<img class="h-24" src="/img/icons/cambio_climatico.png" alt="Icono de Cambio climatico">
+			<img class="h-24" src="/img/icons/ecosistemas_costeros.png" alt="Icono de Ecosistemas Costeros">
+			<img class="h-24" src="/img/icons/residuos.png" alt="Icono de Residuos">
+			<img class="h-24" src="/img/icons/suelo.png" alt="Icono de Suelos">
+		</div>
+		<article class="bg-white p-12 rounded-3xl my-4 shadow-md">
+			<h1 class="text-2xl font-bold mb-4">¿Quiénes participan?</h1>
+			<p>
+				El proyecto Mapa Verde fue diseñado y es gestionado por la
+				Facultad de Comunicación (FCOM) de la Universidad de Montevideo
+				(UM), en el marco de su línea de investigación y extensión en
+				comunicación para el desarrollo sostenible. Cuenta, desde la
+				etapa de ideación, con el impulso y la participación de las
+				iniciativas juveniles Fridays for Future, Movimiento Abeja y
+				Ecocity, que conforman el Consejo Consultor del proyecto. Se
+				puso en marcha en 2023, gracias al apoyo de UNICEF, en el marco
+				de su programa Acción Climática, y a fondos otorgados por la
+				Embajada de los Estados Unidos en Uruguay. Cuenta asimismo con
+				la colaboración del Instituto Nacional de la Juventud (INJU). La
+				plataforma digital fue un trabajo conjunto con Data Uruguay,
+				desarrolladores del sitio web y encargados de su mantenimiento.
+				El proceso de co-creación del Mapa Verde involucró también a
+				jóvenes de distintos puntos del país con interés en la acción
+				ambiental y la comunicación.
+			</p>
+		</article>
+		<article class="bg-white p-12 rounded-3xl my-4 shadow-md">
+			<h1 class="text-2xl font-bold mb-4">¿Cómo surge la iniciativa?</h1>
+			<p>
+				La idea surge en 2021, en el programa “Comunicación para salvar
+				el planeta”, realizado por la Facultad de Comunicación de la
+				Universidad de Montevideo en conjunto con INJU! y con el apoyo
+				de UNICEF y del Ministerio de Ambiente. Del diálogo entre
+				profesores, estudiantes e iniciativas juveniles que estaban
+				trabajando sobre la problemática ambiental en Uruguay, surge la
+				necesidad de contar con una herramienta para conocer, vincular y
+				potenciar la acción ambiental joven en Uruguay. Este diagnóstico
+				se confirma y se estudia más a fondo en programas formativos
+				como “La ciencia de comunicar para inspirar” (2021), impulsado
+				desde la FCOM y financiado por la Embajada de Estados Unidos en
+				Uruguay, y en investigaciones académicas sobre participacion
+				juvenil y comunicación ambiental, realizadas por la UM. Entre
+				2022 y 2023, el interés de las iniciativas juveniles reactiva la
+				idea, la FCOM lleva adelante una investigación exploratoria
+				sobre la viabilidad de la plataforma digital Mapa Verde y, en
+				esta colaboración academia-tercer sector, se articula un
+				proyecto que logra los fondos y los apoyos institucionales
+				necesarios para llevarla a la práctica mediante un proceso
+				participativo. Las iniciativas juveniles que lo impulsan en esta
+				etapa son Ecocity (Paysandú), Fridays for Future Uruguay
+				(Montevideo) y Movimiento Abeja (Colonia).
+			</p>
+		</article>
+	</section>
 </Layout>
