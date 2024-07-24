@@ -1,0 +1,27 @@
+---
+import Header from '../../components/Header.astro';
+import UserProfile from '../../components/UserProfile.astro';
+import SidebarMenu from '../../components/SidebarMenu.astro';
+import Layout from '../../layouts/Layout.astro';
+import HeaderSection from '../../sections/HeaderSection.astro';
+---
+
+<Layout title="Mapa Verde">
+	<Header />
+	<HeaderSection imgSrc="/src/img/mi-cuenta.png" bgColor="bg-violet-700" />
+	<section class="max-w-7xl mx-auto">
+		<div class="p-6">
+			<UserProfile imgSrc="/src/img/avatar.webp" name="Tatiana Oviedo" role="Agente Verde" />
+		</div>
+
+		<div class="flex">
+			<SidebarMenu />
+			<div class="flex-1 p-6">
+			  <h1 class="text-2xl font-bold mb-4">Mis puntos</h1>
+			  
+			  
+			</div>
+		  </div>
+
+	</section>
+</Layout>

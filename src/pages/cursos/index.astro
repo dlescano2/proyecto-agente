@@ -1,0 +1,206 @@
+---
+import Header from "../../components/Header.astro";
+import Layout from "../../layouts/Layout.astro";
+import HeaderSection from "../../sections/HeaderSection.astro";
+
+import CourseCard from "../../components/CourseCard.astro";
+
+const courses = [
+	{
+		title: "Formacion inicial para Agentes Verdes",
+		instructor: "David Millar",
+		duration: "2h 20m",
+		level: "Básico",
+		students: 150,
+		image: "/src/img/curso-formacion.png",
+		tags: ["General"],
+		url: "/cursos/formacion-inicial",
+	},
+	{
+		title: "Ambiente y prácticas sostenibles",
+		instructor: "Tatiana Oviedo",
+		duration: "4h 30m",
+		level: "Básico",
+		students: 47,
+		image: "/src/img/curso-ambiente.png",
+		tags: ["Consumo sostenible"],
+		url: "#",
+	},
+	{
+		title: "Comunicación para el desarrollo sostenible",
+		instructor: "José Souza",
+		duration: "2h 10m",
+		level: "Básico",
+		students: 80,
+		image: "/src/img/curso-comunicacion.png",
+		tags: ["C4D", "Aire", "Suelo", "Bosques"],
+		url: "#",
+	},
+	{
+		title: "Ecoinfluencers y acción ambiental joven en Uruguay",
+		instructor: "Liliana Gomez",
+		duration: "2h 20m",
+		level: "Intermedio",
+		students: 150,
+		image: "/src/img/curso-ecoinfluencer.png",
+		tags: ["C4D", "Comunicación"],
+		url: "#",
+	},
+];
+---
+
+<Layout title="Mapa Verde">
+	<Header />
+	<HeaderSection imgSrc="/src/img/formacion.png" bgColor="bg-green-500" />
+	<section class="max-w-7xl mx-auto">
+		<p class="text-center max-w-5xl mx-auto py-12">
+			is simply dummy text of the printing and typesetting industry. Lorem
+			Ipsum has been the industry's standard dummy text ever since the
+			1500s, when an unknown printer took a galley of type and scrambled
+			it to make a type specimen book. It has survived not only five
+			centuries, but also the leap into electronic typesetting, remaining
+			essentially unchanged. It was popularised in the 1960s with the
+			release of Letraset sheets containing Lorem Ipsum passages, and more
+			recently with desktop publishing software like Aldus PageMaker
+			including versions of Lorem Ipsum.
+		</p>
+
+		<div class="mb-4 border-b border-gray-200">
+			<ul
+				class="flex flex-wrap -mb-px text-sm text-center"
+				id="default-styled-tab"
+				data-tabs-toggle="#default-styled-tab-content"
+				data-tabs-active-classes="text-purple-600 hover:text-purple-600 border-purple-600"
+				data-tabs-inactive-classes="text-gray-500 hover:text-gray-600 border-gray-100 hover:border-gray-300"
+				role="tablist"
+			>
+				<li class="me-2" role="presentation">
+					<button
+						class="inline-block p-4 border-b-2 border-purple-700 rounded-t-lg text-purple-700 font-medium"
+						id="profile-styled-tab"
+						data-tabs-target="#styled-profile"
+						type="button"
+						role="tab"
+						aria-controls="profile"
+						aria-selected="false">Todos los cursos</button
+					>
+				</li>
+				<li class="me-2" role="presentation">
+					<button
+						class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
+						id="dashboard-styled-tab"
+						data-tabs-target="#styled-dashboard"
+						type="button"
+						role="tab"
+						aria-controls="dashboard"
+						aria-selected="false">C4D</button
+					>
+				</li>
+				<li class="me-2" role="presentation">
+					<button
+						class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
+						id="settings-styled-tab"
+						data-tabs-target="#styled-settings"
+						type="button"
+						role="tab"
+						aria-controls="settings"
+						aria-selected="false">Participación</button
+					>
+				</li>
+				<li role="presentation">
+					<button
+						class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
+						id="contacts-styled-tab"
+						data-tabs-target="#styled-contacts"
+						type="button"
+						role="tab"
+						aria-controls="contacts"
+						aria-selected="false">Energía</button
+					>
+				</li>
+				<li role="presentation">
+					<button
+						class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
+						id="contacts-styled-tab"
+						data-tabs-target="#styled-contacts"
+						type="button"
+						role="tab"
+						aria-controls="contacts"
+						aria-selected="false">Residuos</button
+					>
+				</li>
+				<li role="presentation">
+					<button
+						class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
+						id="contacts-styled-tab"
+						data-tabs-target="#styled-contacts"
+						type="button"
+						role="tab"
+						aria-controls="contacts"
+						aria-selected="false">...</button
+					>
+				</li>
+			</ul>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+			{courses.map((course) => <CourseCard {...course} />)}
+		</div>
+		<div class="flex justify-center py-8">
+			<nav aria-label="Page navigation example">
+				<ul class="inline-flex -space-x-px text-base h-10">
+					<li>
+						<a
+							href="#"
+							class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700"
+							>Anterior</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+							>1</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+							>2</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							aria-current="page"
+							class="flex items-center justify-center px-4 h-10 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700"
+							>3</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+							>4</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+							>5</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700"
+							>Siguiente</a
+						>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+</Layout>

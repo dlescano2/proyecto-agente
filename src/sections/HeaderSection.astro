@@ -1,0 +1,12 @@
+---
+export interface Props {
+  imgSrc: string;
+  bgColor: string;
+}
+
+const { imgSrc, bgColor } = Astro.props;
+---
+
+<div class={`w-full h-40 py-4 flex items-center ${bgColor}`}>
+  <img src={imgSrc} alt="Imagen de cabecera" class="mx-auto" />
+</div>

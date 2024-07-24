@@ -1,0 +1,32 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<title>{title}</title>
+		<meta name="description" content="Plataforma Mapa Verde" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	</head>
+	<body>
+		<slot />
+		<div class="h-32">
+
+		</div>
+	</body>
+</html>
+<style is:global>
+	
+	html {
+		font-family: system-ui, sans-serif;
+		background: #fff;
+	}
+	
+</style>
