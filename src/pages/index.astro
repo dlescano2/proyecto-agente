@@ -1,55 +1,67 @@
 ---
 import HeaderHome from "../components/HeaderHome.astro";
 import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
 
 const events = [
-  {
-    title: "Limpieza de Playas y Conservación de Ecosistemas Costeros",
-    date: "10 de Setiembre de 2024",
-    location: "Montevideo",
-    tags: ["Ecosistema Costero"],
-    image: "/img/actividades/limpieza-playas.png",
-    category: "Campañas de concientización",
-    organizer: "Playas Limpias"
-  },
-  {
-    title: "Plantación de Árboles para la Conservación de Bosques",
-    date: "12 de Setiembre de 2024",
-    location: "Artigas",
-    tags: ["Bosques"],
-    image: "/img/actividades/plantacion-arboles.png",
-    category: "Restauración ambiental",
-    organizer: "Nativa"
-  },
-  {
-    title: "Taller Consumo Sostenible y Energía Renovable",
-    date: "14 de Setiembre de 2024",
-    location: "Montevideo",
-    tags: ["Residuos", "Energía"],
-    image: "/img/actividades/taller-consumo-sostenible.png",
-    category: "Talleres",
-    organizer: "EcoCasas"
-  },
-  {
-    title: "Taller Conservación de la Biodiversidad Acuática",
-    date: "20 de Setiembre de 2024",
-    location: "Maldonado",
-    tags: ["Biodiversidad"],
-    image: "/img/actividades/taller-conservacion-bio.png",
-    category: "Eventos Educativos",
-    organizer: "Playas Limpias"
-  }
+	{
+		title: "Limpieza de Playas y Conservación de Ecosistemas Costeros",
+		date: "10 de Setiembre de 2024",
+		location: "Montevideo",
+		tags: ["Ecosistema Costero"],
+		image: "/img/actividades/limpieza-playas.png",
+		category: "Campañas de concientización",
+		organizer: "Playas Limpias",
+	},
+	{
+		title: "Plantación de Árboles para la Conservación de Bosques",
+		date: "12 de Setiembre de 2024",
+		location: "Artigas",
+		tags: ["Bosques"],
+		image: "/img/actividades/plantacion-arboles.png",
+		category: "Restauración ambiental",
+		organizer: "Nativa",
+	},
+	{
+		title: "Taller Consumo Sostenible y Energía Renovable",
+		date: "14 de Setiembre de 2024",
+		location: "Montevideo",
+		tags: ["Residuos", "Energía"],
+		image: "/img/actividades/taller-consumo-sostenible.png",
+		category: "Talleres",
+		organizer: "EcoCasas",
+	},
+	{
+		title: "Taller Conservación de la Biodiversidad Acuática",
+		date: "20 de Setiembre de 2024",
+		location: "Maldonado",
+		tags: ["Biodiversidad"],
+		image: "/img/actividades/taller-conservacion-bio.png",
+		category: "Eventos Educativos",
+		organizer: "Playas Limpias",
+	},
 ];
 ---
 
 <Layout title="Mapa Verde">
 	<HeaderHome />
+	<!--
 	<section>
 		<div class="max-w-4xl mx-auto py-4">
 			<img src="/img/hero-home.png" alt="Mapa del Uruguay" />
 		</div>
 	</section>
+	-->
+	<!-- Mapa -->
+	<div
+		class="padlet-embed -mt-32 mb-12"
+		style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"
+	>
+		<iframe
+			src="https://padlet.com/embed/lesc7t7lk2n4v43t"
+			style="width:100%;height:608px;display:block;padding:0;margin:0"
+		></iframe>
+	</div>
+
 	<section class="max-w-6xl mx-auto mb-4">
 		<div class="bg-blue-900 border rounded-3xl">
 			<div class="p-12 text-center text-white">
@@ -97,11 +109,12 @@ const events = [
 						La Comunidad Verde está compuesta por las personas
 						jóvenes pertenecientes a las iniciativas del Mapa Verde.
 					</p>
-					<a href="/agente-verde"
+					<a
+						href="/agente-verde"
 						class="inline-block bg-purple-700 text-white text-lg font-semibold px-6 py-2 rounded-2xl mb-4 hover:bg-purple-800 transition duration-300"
 					>
 						¡Sé un Agente Verde!
-				</a>
+					</a>
 					<p class="text-gray-700 mb-2">
 						Un nuevo espacio de Mapa Verde donde conectas con otros
 						jóvenes del país interesados en la acción ambiental.
@@ -124,38 +137,57 @@ const events = [
 		</h2>
 		<div>
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-				{events.map(event => (
-				  <div class="border rounded-lg shadow-lg overflow-hidden bg-white">
-					<img src={event.image} alt={event.title} class="w-full h-48 object-cover"/>
-					<div class="p-4">
-					  <div class="mb-2">
-						<span class="bg-blue-600 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">{event.category}</span>
-					  </div>
-					  <h3 class="text-lg font-semibold">{event.title}</h3>
-					  <div class="flex items-center text-sm text-gray-500 mt-2 gap-2">
-						<img src="/img/icons/calendar.png" alt="Calendario">
-						{event.date}
-					  </div>
-					  <div class="flex items-center text-sm text-gray-500 mt-1 gap-2">
-						<img src="/img/icons/pin.png" alt="Pin">
-						{event.location}
-					  </div>
-					  <div class="flex items-center text-sm text-gray-500 mt-1">
-						
-						{event.tags.join(', ')}
-					  </div>
-					  <div class="mt-4 flex justify-between items-center">
-						<span class="text-sm text-gray-500 flex items-center gap-2">
-						  <img src="/path/to/organizer-icon.png" alt={event.organizer} class="h-5 w-5"/>
-						  {event.organizer}
-						</span>
-						<a href="/actividades/limpieza-de-playas" class="text-white hover:text-green-700 p-2 bg-green-500 rounded-full size-10 flex justify-center items-center">
-							<span class="font-semibold">&gt</span>
-						</a>
-					  </div>
-					</div>
-				  </div>
-				))}
+				{
+					events.map((event) => (
+						<div class="border rounded-lg shadow-lg overflow-hidden bg-white">
+							<img
+								src={event.image}
+								alt={event.title}
+								class="w-full h-48 object-cover"
+							/>
+							<div class="p-4">
+								<div class="mb-2">
+									<span class="bg-blue-600 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+										{event.category}
+									</span>
+								</div>
+								<h3 class="text-lg font-semibold">
+									{event.title}
+								</h3>
+								<div class="flex items-center text-sm text-gray-500 mt-2 gap-2">
+									<img
+										src="/img/icons/calendar.png"
+										alt="Calendario"
+									/>
+									{event.date}
+								</div>
+								<div class="flex items-center text-sm text-gray-500 mt-1 gap-2">
+									<img src="/img/icons/pin.png" alt="Pin" />
+									{event.location}
+								</div>
+								<div class="flex items-center text-sm text-gray-500 mt-1">
+									{event.tags.join(", ")}
+								</div>
+								<div class="mt-4 flex justify-between items-center">
+									<span class="text-sm text-gray-500 flex items-center gap-2">
+										<img
+											src="/path/to/organizer-icon.png"
+											alt={event.organizer}
+											class="h-5 w-5"
+										/>
+										{event.organizer}
+									</span>
+									<a
+										href="/actividades/limpieza-de-playas"
+										class="text-white hover:text-green-700 p-2 bg-green-500 rounded-full size-10 flex justify-center items-center"
+									>
+										<span class="font-semibold">&gt</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					))
+				}
 			</div>
 		</div>
 	</section>
